@@ -71,7 +71,6 @@ export class EditProdComponent {
       formData.append('price', this.price);
       formData.append('quantity', this.quantity);
 
-      console.log(formData)
 
 
 
