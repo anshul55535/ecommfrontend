@@ -155,7 +155,7 @@ error(message:string){
   }
 
   edit_prod(id: any, value: any) {
-    return this.http.post(
+    return this.http.put(
       `${this.baseUrl}/main/editproducts/${id}`,
       value,
       {
