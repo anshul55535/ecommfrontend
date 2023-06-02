@@ -1,0 +1,118 @@
+<body>
+  <div class="one">
+    <div class="container">
+      <button
+        (click)="cart({ id: product, qty: product.qty, user: cartuser })"
+        *ngIf="!isseller"
+      >
+        Add To Cart</button
+      >&nbsp;
+
+      <button routerLink="/">Back</button>&nbsp;
+
+      <button
+        *ngIf="isseller && product.owner.email == cartuser"
+        routerLink="/edit_prod/{{ product._id }}"
+      >
+        Edit Details
+      </button>
+      <br />
+      <br />
+
+      <h1>{{ product.title }}</h1>
+      <p>Category: {{ product.category.name }}</p>
+      <h2 id="title">rating :
+        <!-- <app-star-rating [rating]="avgrating/product.reviews.length " [maxRating]="5"></app-star-rating> -->
+
+
+        {{avgrating/product.reviews.length |number:'1.1-1'}}
+        <small id="desc">        (  {{product.reviews.length}}  )
+        </small>
+
+      </h2>
+
+      <img
+        src="https://backend-bwqi.onrender.com/uploads/{{ product.image }}"
+        class="product-image"
+        alt="Product Image"
+      />
+      <p class="">seller: {{ product.owner.name }}</p>
+      <input
+        type="number"
+        name="qty"
+        id=""
+        min="1"
+        [(ngModel)]="product.qty"
+        *ngIf="!isseller"
+      /><br />
+
+      <p class="product-price">{{ product.price | currency :'INR'}}</p>
+      <p class="product-description">Description : {{ product.description }}</p>
+
+    </div>
+
+    <div class="review-card" *ngIf="islogin && !isseller">
+      <div class="write_review">
+        <h3>Write Review</h3>
+        <div class="rev_input">
+          <form (ngSubmit)="review()" >
+            <label for="reviewtitle">Title : </label><br>
+            <input
+              type="text"
+              id="reviewtitle"
+              name="reviewtitle"
+              required
+              [(ngModel)]="reviewtitle"
+            />
+            <br />
+            <label for="reviewdescription">desription : </label><br>
+
+            <textarea
+              name="reviewdescription"
+              id="reviewdescription"
+              cols="30"
+              required
+              rows="5"
+              [(ngModel)]="reviewdescription"
+            ></textarea>
+            <div class="rating">
+              <label for="reviewrating">Rating (1 to 5): </label>
+              <input
+                type="number"
+                id="reviewrating"
+                name="reviewrating"
+                min="1"
+                max="5"
+                required
+                [(ngModel)]="reviewrating"
+              />
+            </div>
+            <button type="submit">submit</button>
+          </form>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="rev">
+        <h4>All Reviews</h4>
+        <div *ngFor="let item of product.reviews">
+          <div class="review">
+            <ul  type ="none">
+              <li>title : <span id="title">{{ item.title }}</span></li>
+              <li >By : <span  id="By">{{ item.owner }}</span></li>
+             <div >
+              <li >Desc :<p   id="desc"> {{ item.description }}</p></li>
+             </div>
+              <li>Rating : <span id="rateing">{{ item.rating }}</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+

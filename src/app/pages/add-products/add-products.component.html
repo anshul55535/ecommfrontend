@@ -1,0 +1,51 @@
+<body>
+  <div class="container">
+    <h1>Product Form</h1>
+
+    <div class="form">
+
+    <form   [formGroup]="productForm" (ngSubmit)="prod()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required formControlName="title">
+      </div>
+      <div class="form-group" >
+        <label for="category">Category:</label>
+        <select
+        name="categoryId"
+        formControlName ="category"
+      >
+        <option
+          *ngFor="let category of allcategories"
+          [value]="category._id"
+        >
+          {{ category.name }}
+        </option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file"  (change)="fileChange($event)"   id="image" name="image"  required >
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" min="0" required formControlName="price">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="0" required formControlName="quantity">
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>&nbsp; <span><button  type="submit" routerLink="/" >Back</button></span>
+      </div>
+    </form>
+
+    </div>
+
+  </div>
+</body>
+

@@ -1,0 +1,88 @@
+
+<body>
+  <h2>CART PRODUCTS</h2>
+
+  <!-- <app-message></app-message> -->
+
+  <div class="one" *ngIf="!totalPrice">
+    <h4 style="text-align: center;">Cart is Empty</h4>
+
+  </div>
+
+<!--
+<div class="cont"  *ngIf="totalPrice">
+
+
+
+    <div class="products-details" *ngFor="let product of cart">
+      <div class="product-card">
+        <img
+          src="http://localhost:3000/uploads/{{ product.id.image }}"
+          alt="Product Image"
+          class="product-image"
+        />
+        <div class="product-details">
+          <h3 class="product-name">{{ product.id.title }}</h3>
+          <p class="product-price">{{ product.id.price | currency:'INR'  }} </p>
+          <p>Order Quantity : {{ product.qty }}</p>
+          <p>Seller : {{ product.id.owner.name }}</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+ -->
+
+    <div class="products" >
+
+      <div class="product-card" *ngFor="let product of cart">
+
+
+          <div class="cardetails">
+              <div class="image">
+                  <img src="https://backend-bwqi.onrender.com/uploads/{{ product.id.image }}" alt="">
+              </div>
+              <div class="title">
+                  <p> {{product.id.title}}  </p>
+              </div>
+              <div class="cat">
+                <p>category : {{product.id.category.name}}  </p>
+            </div>
+              <div class="price">
+                  <p> {{product.id.price | currency :'INR'}}  </p>
+              </div>
+              <div class="qty" *ngIf="!isseller"
+              >
+                  <small>Qty : {{product.qty}}
+
+                  </small>
+              </div>
+
+              <div class="seller">
+                  seller : {{product.id.owner.name}}
+              </div>
+
+              <button  (click)="deletecartitem(product)"  >Delete</button>
+
+
+          </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  <div class="price" *ngIf="totalPrice">
+    <h3>Totalprice : {{ totalPrice }}</h3>
+    <div *ngIf="totalPrice"><button    (click)="checkout(cart)">Checkout</button></div>
+  </div>
+
+
+
+
+</body>

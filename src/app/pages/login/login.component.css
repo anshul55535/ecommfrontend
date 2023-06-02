@@ -1,0 +1,76 @@
+/* login.component.css */
+form{
+
+  margin-top: 10vh;
+  margin-left: 35vw;
+  width: 30vw;
+  height:70vh;
+
+  background-color: #ece9e9;
+  border-radius: 1vh;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1vh;
+
+
+}
+
+h3{
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 0vh;
+  text-align: start;
+}
+
+
+.form-group {
+  position: relative;
+  top: 8vh;
+  left: 3vw;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 3vh;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top:0.2vh;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  color: #f6f8f7;
+  border: none;
+  z-index: 1;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #4caf50;
+
+  margin-top: 15vh;
+  margin-left: 3vw;
+}
+
+button:hover{
+  background-color: #45a049;
+}
+
+
+.error-message{
+  color: red;
+  font-size: 2vh;
+  background-color: black;
+  width: 80%;
+}

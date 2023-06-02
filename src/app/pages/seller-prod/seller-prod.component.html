@@ -1,0 +1,109 @@
+<body>
+  <div class="cont">
+    <div class="one">
+      <div class="search">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search By Title"
+          [(ngModel)]="searchtext"
+        />
+        <span
+          ><button (click)="search()" (keyup.enter)="search()">
+            Search
+          </button></span
+        >
+      </div>
+
+      <div class="allproducts">
+        <h3>All Products</h3>
+      </div>
+
+      <div class="category">
+        <h6>search by category</h6>
+
+        <span
+          ><select name="category" id="category" [(ngModel)]="searchcat">
+            <option *ngFor="let item of allcategories" [value]="item.name">
+              {{ item.name }}
+            </option>
+          </select>
+        </span>
+        <span><button (click)="searchcategory()">Search</button></span>
+      </div>
+
+      <div class="products">
+        <div
+          class="product-card"
+          *ngFor="let product of getPaginatedProducts()"
+        >
+          <div class="cardetails">
+            <div class="image">
+              <img
+                src="https://backend-bwqi.onrender.com/uploads/{{ product.image }}"
+                alt=""
+              />
+            </div>
+            <div class="title">
+              <p>{{ product.title }}</p>
+            </div>
+            <div class="cat">
+              <p>category : {{ product.category.name }}</p>
+            </div>
+            <div class="price">
+              <p>{{ product.price | currency : "INR" }}</p>
+            </div>
+            <div class="qty" *ngIf="!isseller">
+              <small
+                >Qty :
+                <input
+                  type="number"
+                  name="qty"
+                  id=""
+                  min="1"
+                  [(ngModel)]="product.qty"
+                  *ngIf="!isseller"
+                  type="number"
+                />
+              </small>
+            </div>
+
+            <div class="seller">seller : {{ product.owner.name }}</div>
+
+            <div class="prod_button">
+              <button routerLink="/prod_detail/{{ product._id }}">More</button>
+              <span
+                ><button
+                  (click)="
+                    cart({ id: product, qty: product.qty, user: cartuser })
+                  "
+                  *ngIf="!isseller"
+                >
+                  Add to cart
+                </button></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button
+        class="btn"
+        [disabled]="currentPage === 1"
+        (click)="currentPage = currentPage - 1"
+      >
+        Previous
+      </button>
+      <span id="pagename">{{ currentPage }}</span>
+      <button
+        class="btn"
+        [disabled]="currentPage * pageSize >= totalProducts"
+        (click)="currentPage = currentPage + 1"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</body>

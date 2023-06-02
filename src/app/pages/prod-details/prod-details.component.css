@@ -1,0 +1,197 @@
+body {
+  background-color: rgb(222, 226, 226);
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+.one{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  /* justify-content: center; */
+}
+.message{
+  z-index: 1;
+  background-color: black;
+}
+
+.container {
+  text-align: center;
+  width: 50vw;
+  margin-top: 20px;
+  /* background-color: #ca2424; */
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-image {
+  width:30vh;
+  height: 30vh;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  object-fit: contain;
+
+}
+
+.product-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align:justify;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  width: 80px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #008080;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #2c918c;
+}
+
+
+
+
+
+/* rating #########################
+ */
+
+
+ .review-card {
+  border: 1px solid #ca2424;
+  padding: 10px;
+  width: 40vw;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* overflow: auto; */
+}
+
+.write_review{
+  display: flex;
+  width: 40vw;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2vh;
+  justify-content: center;
+
+}
+.rev{
+  height: 70vh;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+  /* background-color: #ca2424; */
+}
+
+.rev h4{
+  position: sticky;
+  background-color: black;
+  top:0%;
+  margin-bottom: 1vh;
+  color: white;
+  z-index: 1;
+}
+
+#reviewtitle{
+  width:30vw;
+}
+
+#reviewdescription{
+  width: 30vw;
+}
+
+#reviewrating{
+  width:3vw;
+}
+
+
+.review{
+
+  width: 98%;
+  background-color: rgb(204, 202, 202);
+  /* margin-left: 1vw; */
+
+}
+
+.rev_input{
+  margin-top: 2vw;
+}
+
+
+.review li{
+  margin-top: 1vh;
+  color: rgb(32, 31, 31);
+  text-align: start;
+  font-family: 'Times New Roman', Times, serif;
+
+  /* width: 30vw; */
+
+}
+
+.rev h4{
+  margin-top: 2vh;
+}
+
+#desc{
+  background-color: #f1efef;
+  text-align: center;
+
+  overflow: auto;
+font-size: 2.5vh;
+font-family: 'Times New Roman', Times, serif;
+  width:32vw;
+  height: 20vh;
+}
+
+.rev_input label{
+  text-align: start;
+}
+
+#title{
+  font-size: 4vh;
+  margin-left: 1vh;
+  color: rgb(231, 12, 12);
+}
+
+
+#By{
+  color: #494646;
+  font-size: 2vh;
+}

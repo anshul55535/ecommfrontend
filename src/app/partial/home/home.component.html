@@ -1,0 +1,80 @@
+<div class="home">
+  <div class="search">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search By Title"
+      [(ngModel)]="searchtext"
+    />
+    <span
+      ><button (click)="search()" (keyup.enter)="search()">Search</button></span
+    >
+  </div>
+
+  <div
+    id="carouselExampleInterval"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img
+          src="././././assets/images/iph.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img
+          src="././././assets/images/888.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img
+          src="././././assets/images/111.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img
+          src="././././assets/images/lg.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <app-products
+    [products]="products"
+    [isseller]='isseller'
+    [userdata]='userdata'
+    [cartuser]='cartuser'
+    [currentPage]='currentPage'
+    [totalProducts]='totalProducts'
+    [searchcat]='searchcat'
+    [allcategories]='allcategories'
+    [searchtext]='searchtext'
+  ></app-products>
+</div>

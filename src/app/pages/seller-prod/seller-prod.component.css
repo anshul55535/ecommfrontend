@@ -1,0 +1,206 @@
+.cont {
+  background-color: #080808;
+  height: 100%;
+  margin: auto;
+}
+
+.search {
+  margin-left: 5vw;
+}
+
+.search input::placeholder {
+  color: #dfcdcd;
+  font-size: 2vh;
+}
+
+#search {
+  margin-top: 5vh;
+  width: 80vw;
+  padding: 0.6vh;
+  border-radius: 1vh 0 0 1vh;
+  background-color: transparent;
+  color: white;
+  border-style: solid;
+  border-color: #f3efef;
+  border-width: 0.05vh;
+}
+
+.search button {
+  width: 7vw;
+  margin-left: 0vw;
+  border-radius: 0vh 1vh 1vh 0;
+  color: #fcf9f9;
+  background-color: #585a59;
+  padding: 0.7vh;
+  border: none;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.search button:hover {
+  background-color: #0b0922;
+}
+
+.allproducts {
+  text-align: center;
+  width: 87vw;
+  margin-left: 5vw;
+  margin-top: 1vh;
+  color: white;
+  background-color: #f70b0b;
+}
+
+.category {
+  margin-top: 1vh;
+  margin-left: 5vw;
+}
+
+.category h6 {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#category {
+  margin-top: 0.1vh;
+  color: #fcf8f8;
+  width: 20vw;
+  padding: 0.4vh;
+  border-radius: 0.5vh;
+  border-color: white;
+  background-color: transparent;
+}
+
+.category button {
+  background-color: #585555;
+  color: white;
+}
+
+.category button:hover {
+  background-color: #8b8383;
+}
+
+.category option {
+  background-color: black;
+}
+
+.products {
+  height: 100%;
+  width: 88vw;
+  margin-top: 2vh;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fcffff;
+  width: 20vw;
+  height: 55vh;
+  margin: 0.5vh 1.5vw;
+  border-radius: 1vh;
+}
+
+.cardetails {
+  margin-left: 1vh;
+}
+
+.title {
+  height: 5vh;
+  margin: 2vh 0 1vh;
+  font-size: 2.8vh;
+  font-weight: bold;
+  line-height: 2.5vh;
+  text-align: start;
+}
+
+.cat {
+  margin-top: 1vh;
+  font-size: 2.5vh;
+  font-weight: 200;
+  color: gray;
+}
+
+.price p {
+  margin-top: 0.5vh;
+  color: #079494;
+  font-weight: bold;
+}
+
+.image {
+  align-content: center;
+}
+
+.image img {
+  margin: 1vh 1.5vw;
+  width: 10vw;
+  height: 15vh;
+  object-fit: contain;
+}
+
+.qty input {
+  width: 3vw;
+  margin-bottom: 0.5vh;
+}
+
+.seller {
+  margin-bottom: 0.5vh;
+}
+
+.prod_button button {
+  background-color: #248a70;
+  padding: 1vh;
+  border-radius: 0.5vh;
+  color: white;
+  border: none;
+  margin-right: 1vw;
+}
+
+.prod_button button:hover {
+  background-color: #3bc2a5;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.pagination li {
+  list-style: none;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.pagination li a {
+  padding: 5px 10px;
+  background-color: #248a70;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.pagination li a:hover {
+  background-color: #3bc2a5;
+}
+
+.pagination .current-page {
+  background-color: #248a70;
+}
+
+#pagename {
+  color: white;
+  margin-top: 2.5vh;
+}
+
+.btn {
+  background-color: #008080;
+  padding: 0.5vh;
+  border-radius: 0.5vh;
+}
+
+.btn:hover {
+  background-color: #005959;
+}

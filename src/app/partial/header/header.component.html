@@ -1,0 +1,32 @@
+
+  <body>
+    <div class="cont">
+      <div class="logo">
+        <img src="././././assets/images/11.png" alt="LOGO"  routerLink="/"/>
+      </div>
+
+
+        <ul type="none">
+          <li routerLink="/">Home</li>
+          <li routerLink="cart"  *ngIf="!isseller && islogin" >Cart</li>
+          <li routerLink="/login" *ngIf="!islogin">Login</li>
+          <li routerLink="/myorders" *ngIf="islogin && !isseller">MyOrders</li>
+          <li routerLink="/add-cat" *ngIf="isseller && islogin">AddCategory</li>
+          <li  *ngIf="isseller && islogin" routerLink="/add_products">Add Products</li>
+          <li  *ngIf="isseller && islogin" routerLink="/seller_prod">MyProducts</li>
+
+
+
+          <li *ngIf="islogin" routerLink="/products">Products</li>
+          <li (click)="logout()"  *ngIf="islogin">Logout</li>
+
+        </ul>
+    </div>
+    <div class="messages">
+      <app-message></app-message>
+
+    </div>
+  </body>
+
+  <router-outlet></router-outlet>
+

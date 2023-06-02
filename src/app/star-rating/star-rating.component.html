@@ -1,0 +1,6 @@
+<p>star-rating works!</p>
+<span class="star-rating">
+  <ng-container *ngFor="let star of getStars()">
+    <i class="fa" [class.fa-star]="star <= rating" [class.fa-star-half]="star > rating && star - 1 < rating" (click)="rate(star)"></i>
+  </ng-container>
+</span>

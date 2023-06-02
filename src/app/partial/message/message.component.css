@@ -1,0 +1,21 @@
+
+.yes{
+  background-color: rgb(128, 211, 128);
+  color :white;
+  text-align: center;
+z-index: 1;
+
+}
+
+.no{
+  /* height: 5vh; */
+
+  background-color: rgb(216, 124, 124);
+  color :white;
+  text-align: center;
+  z-index: 1;
+
+
+}
+
+

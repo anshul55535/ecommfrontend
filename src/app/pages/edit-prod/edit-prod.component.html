@@ -1,0 +1,46 @@
+<body>
+  <div class="container">
+    <h1>EDIT  Form</h1>
+    <form    (ngSubmit)="prod()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"  required [(ngModel)] = "title">
+      </div>
+      <div class="form-group" >
+        <label for="category">Category:</label>
+        <select
+        name="category"
+        [(ngModel)] ="cate"
+      >
+        <option
+          *ngFor="let category of allcategory"
+          [value]="category._id"
+        >
+          {{ category.name }}
+        </option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <img src="" alt="">
+        <input type="file"  (change)="fileChange($event)"   id="image" name="image"  required >
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required [(ngModel)]="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" min="0" required [(ngModel)]="price">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="0" required [(ngModel)]="quantity">
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+

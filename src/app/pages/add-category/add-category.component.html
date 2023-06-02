@@ -1,0 +1,27 @@
+
+<body>
+  <main>
+    <form [formGroup]="addcategory" (ngSubmit)="category(addcategory.value)">
+      <h1>Add Categories</h1>
+      <label for="cat">Category</label>
+      <input
+        type="text"
+        id="cat"
+        required
+        formControlName="category"
+      /><br /><br />
+
+      <button type="submit">Submit</button> &nbsp;<span>
+        <button type="submit" routerLink="/">Back</button><br />
+      </span>
+    </form>
+  </main>
+
+  <!-- <button  (click)="getcategory()" type="submit" >get category</button><br> -->
+
+  <div class="allcategories">
+    <ul *ngFor="let item of allcategories" class="all_cat">
+      <li>{{ item.name }}</li>
+    </ul>
+  </div>
+</body>

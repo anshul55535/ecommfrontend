@@ -1,0 +1,33 @@
+<body>
+  <main>
+    <form [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)" novalidate>
+      <h1>Sign Up</h1>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required formControlName="email">
+      <div  class="error" *ngIf="isSubmitted && signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)" class="error-message">
+        <div class="error" *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div class="error" *ngIf="signupForm.get('email')?.errors?.['email']">Invalid email format.</div>
+      </div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required formControlName="name">
+      <div class="error" *ngIf="isSubmitted && signupForm.get('name')?.invalid && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)" class="error-message">
+        <div class="error" *ngIf="signupForm.get('name')?.errors?.['required']">Name is required.</div>
+      </div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required formControlName="password">
+      <div class="error" *ngIf="isSubmitted && signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)" class="error-message">
+        <div *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</div>
+        <div *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.</div>
+        <div *ngIf="signupForm.get('password')?.errors?.['pattern']">Password must contain at least 1 symbol.</div>
+      </div>
+
+      <div class="isseller">
+        <label for="isSeller">Do You Want to Sell Your Products:</label>
+      <input type="checkbox" id="isSeller" formControlName="isSeller">
+
+      </div>
+      <br><br>
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+</body>

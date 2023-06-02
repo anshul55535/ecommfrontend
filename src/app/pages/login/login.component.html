@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" [class.submitted]="isSubmitted" novalidate>
+  <div class="form-group">
+    <h3>Login </h3>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" class="form-control">
+    <div *ngIf="isSubmitted && loginForm.get('email')?.errors?.['required']" class="error-message">Email is required.</div>
+    <div *ngIf="isSubmitted && loginForm.get('email')?.errors?.['email']" class="error-message">Invalid email format.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" class="form-control">
+    <div *ngIf="isSubmitted && loginForm.get('password')?.errors?.['required']" class="error-message">Password is required.</div>
+    <div *ngIf="isSubmitted && loginForm.get('password')?.errors?.['minlength']" class="error-message">Password must be at least 8 characters long.</div>
+    <div *ngIf="isSubmitted && loginForm.get('password')?.errors?.['pattern']" class="error-message">Password must contain at least 1 symbol.</div>
+  </div>
+
+  <button type="submit">Login</button><span>  New User Please
+    <a routerLink="/signup">SignUp!!</a></span>
+
+</form>
+
+
